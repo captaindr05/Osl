@@ -1,0 +1,54 @@
+🧠 CONCEPT (Simple Explanation)
+🧩 What is Page Replacement?
+
+When memory (frames) is full and a new page is needed, the OS must decide which old page to remove.
+The strategy used to decide this is the page replacement algorithm.
+
+💥 Page Fault:
+
+When a page (number) is not found in memory, that’s a page fault.
+The OS then loads it into a frame — sometimes replacing another page.
+
+1️⃣ LRU (Least Recently Used) Algorithm
+
+“Least Recently Used” = remove the page that hasn’t been used for the longest time.
+
+The idea:
+The page not used for a long time probably won’t be used soon.
+
+Example:
+If your last uses were:
+Page 2 (latest), Page 3, Page 1 (oldest)
+→ remove Page 1 next.
+
+Steps:
+
+Keep track of recent usage order.
+
+If new page comes:
+
+If it’s already in memory → ✅ Hit.
+
+If not in memory → ❌ Page fault → replace the least recently used page.
+
+2️⃣ Optimal Algorithm
+
+This is the best possible page replacement method.
+
+It replaces the page that will not be used for the longest time in the future.
+
+It’s used for comparison/testing, not real OS (since it needs future knowledge).
+
+Steps:
+
+Look at the future page requests.
+
+For each page in memory, check when it will be used again.
+
+Replace the one that is used farthest in the future.
+
+⚖️ Comparison Table
+Algorithm	How It Works	Advantage	Disadvantage
+FIFO	Remove oldest	Simple	Can cause Belady’s anomaly
+LRU	Remove least recently used	Good practical performance	Needs tracking
+OPTIMAL	Replace page not used for longest future time	Minimum page faults	Not realistic (future unknown)
