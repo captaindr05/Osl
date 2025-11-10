@@ -8,3 +8,15 @@ RUN CODE
 sh addressbook.sh
 
 
+
+
+
+another method for execution
+
+chmod 777 addressbook.sh
+
+./addressbook.sh
+
+
+
+
